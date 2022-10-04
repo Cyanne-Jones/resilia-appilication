@@ -44,7 +44,6 @@ function App() {
 
   const handleButtonPress = () => {
     isNotificationMenuOpen ? setIsNotificationMenuOpen(false) : setIsNotificationMenuOpen(true);
-    console.log(isNotificationMenuOpen);
   }
 
   return (
