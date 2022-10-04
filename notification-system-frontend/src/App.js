@@ -8,6 +8,7 @@ function App() {
   const userNotifications = useNotificationStore(state => state.notifications);
   const [ notifications, setNotifications ] = useState([]);
   const [ isNotificationMenuOpen, setIsNotificationMenuOpen ] = useState(false);
+  const [ errorMessage, setErrorMessage ] = useState('');
 
   useEffect(() => {
 
@@ -21,9 +22,12 @@ function App() {
       })
       .then(res => {
         addNotifications(res.notifications);
+        setNotifications(userNotifications);
       })
-      .catch(error => console.log(error));
-      setNotifications(userNotifications);
+      .catch(error => {
+        setNotifications(userNotifications);
+        setErrorMessage(error.message);
+        return console.log(error)});
   }, []);
 
   const mappedNotifications = notifications.map(notification => {
@@ -52,13 +56,14 @@ function App() {
         <h1>BookFace</h1>
         <button onClick={handleButtonPress}>
           Notifications
-          {notifications && <div className="notification-icon">!</div>}
+          {notifications[0] && <div className="notification-icon">!</div>}
         </button>
       </nav>
       <main>
         <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
           {mappedNotifications}
         </div>
+        {errorMessage}
         <p>Your news feed goes here</p>
       </main>
     </div>
