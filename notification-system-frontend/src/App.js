@@ -26,8 +26,8 @@ function App() {
       })
       .catch(error => {
         setNotifications(userNotifications);
-        setErrorMessage(error.message);
-        return console.log(error)});
+        setErrorMessage(error.message === 'Failed to fetch' && 'Failed to retrieve data from server. Please try again.');
+      });
   }, []);
 
   const mappedNotifications = notifications.map(notification => {
@@ -61,7 +61,7 @@ function App() {
       </nav>
       <main>
         <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
-          {mappedNotifications}
+          {notifications[0] ? mappedNotifications : "No new notifications"}
         </div>
         {errorMessage}
         <p>Your news feed goes here</p>
