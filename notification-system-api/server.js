@@ -30,7 +30,7 @@ app.locals.notifications = [
     interactionType: 'commented on',
     comment: 'What a cute cat!',
     interactionSubject: 'photo',
-    dateCreated: 1664916000,
+    dateCreated: 1664816000,
     interactionLink: "https://i.imgur.com/QnkFrG3.gif"
   },
   {
@@ -40,7 +40,7 @@ app.locals.notifications = [
     interactionType: 'commented on',
     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     interactionSubject: 'post',
-    dateCreated: 1664916000,
+    dateCreated: 1664716000,
     interactionLink: "https://www.lipsum.com/"
   },
   {
@@ -49,7 +49,7 @@ app.locals.notifications = [
     interactionTo: 'Cyanne Jones',
     interactionType: 'liked',
     interactionSubject: 'post',
-    dateCreated: 1664916000,
+    dateCreated: 1664616000,
     interactionLink: "https://www.lipsum.com/"
   }
 ];
