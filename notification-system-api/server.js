@@ -4,6 +4,8 @@ const app = express();
 app.use(express.json());
 app.set('port', process.env.PORT || 8000);
 
+app.locals.title = 'Notifications';
+
 app.locals.notifications = [
   {
     id: 1,
