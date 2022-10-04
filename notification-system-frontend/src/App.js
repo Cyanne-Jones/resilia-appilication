@@ -33,7 +33,7 @@ function App() {
       className="notification" 
       key={notification.id}
     >
-      <p>{notification.id}</p>
+      <p>{notification.interactionFrom} {notification.interactionType} your <a href={notification.interactionLink}>{notification.interactionSubject}</a> on {new Date(notification.dateCreated).toDateString()}</p>
     </div>
     )
 
@@ -53,7 +53,7 @@ function App() {
         </button>
       </nav>
       <main>
-        <div className={`notification-container ${isNotificationMenuOpen ? "openMenu" : "hiddenMenu"}`}>
+        <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
           {mappedNotifications}
         </div>
         <p>Your news feed</p>

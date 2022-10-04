@@ -20,10 +20,18 @@ button:hover {
   cursor: pointer;
 }
 
-.openMenu {
+.open-menu {
   display: block;
 }
 
-.hiddenMenu {
+.hidden-menu {
   display: none;
+}
+
+.notification-container {
+  background-color: lightblue
+}
+
+.notification {
+  background-color: lightcyan;
 }
