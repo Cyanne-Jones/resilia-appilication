@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-
+app.use(cors());
 app.use(express.json());
-app.set('port', process.env.PORT || 8000);
+
+app.set('port', 8000);
 
 app.locals.title = 'Notifications';
 
@@ -13,7 +15,7 @@ app.locals.notifications = [
     interactionTo: 'Cyanne Jones',
     interactionType: 'liked',
     interactionSubject: 'photo',
-    dateCreated: 1664914999,
+    dateCreated: 1664914999000,
     interactionLink: "https://i.imgur.com/QnkFrG3.gif"
   },
   {
@@ -22,7 +24,7 @@ app.locals.notifications = [
     interactionTo: 'Cyanne Jones',
     interactionType: 'liked',
     interactionSubject: 'post',
-    dateCreated: 1664916000,
+    dateCreated: 1664916000000,
     interactionLink: "https://www.lipsum.com/"
   },
   {
@@ -32,7 +34,7 @@ app.locals.notifications = [
     interactionType: 'commented on',
     comment: 'What a cute cat!',
     interactionSubject: 'photo',
-    dateCreated: 1664816000,
+    dateCreated: 1664816000000,
     interactionLink: "https://i.imgur.com/QnkFrG3.gif"
   },
   {
@@ -42,7 +44,7 @@ app.locals.notifications = [
     interactionType: 'commented on',
     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     interactionSubject: 'post',
-    dateCreated: 1664716000,
+    dateCreated: 1664716000000,
     interactionLink: "https://www.lipsum.com/"
   },
   {
@@ -51,7 +53,7 @@ app.locals.notifications = [
     interactionTo: 'Cyanne Jones',
     interactionType: 'liked',
     interactionSubject: 'post',
-    dateCreated: 1664616000,
+    dateCreated: 1664616000000,
     interactionLink: "https://www.lipsum.com/"
   }
 ];
