@@ -7,8 +7,7 @@
 - `cd notification-system-api`
 - `npm i`
 - `npm start` to start the API server
-- Open a new terminal window and run the following commands:
-- `cd ..`
+- Open a new terminal window and run the following commands in the root directory:
 - `cd notification-system-frontend`
 - `npm i`
 - `npm start` to start the front end server
