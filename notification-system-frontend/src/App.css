@@ -19,3 +19,11 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.openMenu {
+  display: block;
+}
+
+.hiddenMenu {
+  display: none;
+}
