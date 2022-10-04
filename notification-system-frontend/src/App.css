@@ -1,0 +1,20 @@
+.App {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background-color: lightblue;
+  border-radius: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
