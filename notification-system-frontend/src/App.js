@@ -5,6 +5,7 @@ import { useNotificationStore } from './state/useNotificationStore';
 function App() {
 
   const addNotifications = useNotificationStore(state => state.addNotifications);
+  const userNotifications = useNotificationStore(state => state.notifications);
   const [ notifications, setNotifications ] = useState([]);
   const [ isNotificationMenuOpen, setIsNotificationMenuOpen ] = useState(false);
 
@@ -22,8 +23,7 @@ function App() {
         addNotifications(res.notifications);
       })
       .catch(error => console.log(error));
-      const parsedNotifications = JSON.parse(localStorage.getItem('notification-storage'));
-      setNotifications(parsedNotifications.state.notifications);
+      setNotifications(userNotifications);
   }, []);
 
   const mappedNotifications = notifications.map(notification => {
