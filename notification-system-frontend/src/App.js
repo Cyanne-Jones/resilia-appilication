@@ -33,7 +33,10 @@ function App() {
       className="notification" 
       key={notification.id}
     >
-      <p>{notification.interactionFrom} {notification.interactionType} your <a href={notification.interactionLink}>{notification.interactionSubject}</a> on {new Date(notification.dateCreated).toDateString()}</p>
+      <p className="notification-text">
+        {notification.interactionFrom} {notification.interactionType} your <a href={notification.interactionLink}>{notification.interactionSubject}</a> on {new Date(notification.dateCreated).toDateString()}
+      </p>
+      {notification.comment && <p className="comment">"{notification.comment}"</p>}
     </div>
     )
 
@@ -50,13 +53,14 @@ function App() {
         <h1>BookFace</h1>
         <button onClick={handleButtonPress}>
           Notifications
+          {notifications && <div className="notification-icon">!</div>}
         </button>
       </nav>
       <main>
         <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
           {mappedNotifications}
         </div>
-        <p>Your news feed</p>
+        <p>Your news feed goes here</p>
       </main>
     </div>
   );

@@ -2,6 +2,11 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -14,10 +19,14 @@ button {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 1rem;
   margin: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 button:hover {
   cursor: pointer;
+  background-color:blue;
+  color: blanchedalmond;
 }
 
 .open-menu {
@@ -29,9 +38,34 @@ button:hover {
 }
 
 .notification-container {
-  background-color: lightblue
+  background-color: lightblue;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: solid darkcyan 3px;
 }
 
 .notification {
   background-color: lightcyan;
+  padding: 0.1rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  border: solid darkcyan 3px;
+}
+
+.notification-text {
+  padding: 0.3rem;
+}
+
+.comment {
+  color: gray;
+  padding: 0.3rem;
+  margin-left: 1rem;
+}
+
+.notification-icon {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  background-color: tomato;
+  margin-left: 1rem;
 }
