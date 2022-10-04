@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-
+app.use(cors());
 app.use(express.json());
-app.set('port', process.env.PORT || 8000);
+
+app.set('port', 8000);
 
 app.locals.title = 'Notifications';
 
