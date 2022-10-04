@@ -19,11 +19,10 @@ function App() {
       })
       .then(res => {
         addNotifications(res.notifications);
-        const parsedNotifications = JSON.parse(localStorage.getItem('notification-storage'));
-        setNotifications(parsedNotifications.state.notifications);
       })
       .catch(error => console.log(error));
-
+      const parsedNotifications = JSON.parse(localStorage.getItem('notification-storage'));
+      setNotifications(parsedNotifications.state.notifications);
   }, []);
 
   const mappedNotifications = notifications.map(notification => {
