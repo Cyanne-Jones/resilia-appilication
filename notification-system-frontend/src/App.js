@@ -47,12 +47,12 @@ function App() {
         <h1>BookFace</h1>
         <button onClick={handleButtonPress}>
           Notifications
-          {userNotifications && <div className="notification-icon">!</div>}
+          {userNotifications[0] && <div className="notification-icon">!</div>}
         </button>
       </nav>
       <main>
         <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
-          {userNotifications ? mappedNotifications : "No new notifications"}
+          {userNotifications[0] ? mappedNotifications : "No new notifications"}
         </div>
         {errorMessage}
         <p>Your news feed goes here</p>
