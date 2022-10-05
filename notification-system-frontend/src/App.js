@@ -6,7 +6,6 @@ function App() {
 
   const addNotifications = useNotificationStore(state => state.addNotifications);
   const userNotifications = useNotificationStore(state => state.notifications);
-  const [ notifications, setNotifications ] = useState([]);
   const [ isNotificationMenuOpen, setIsNotificationMenuOpen ] = useState(false);
   const [ errorMessage, setErrorMessage ] = useState('');
 
