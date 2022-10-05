@@ -13,24 +13,16 @@ function App() {
   useEffect(() => {
 
     fetch("http://localhost:8000/api/v1/notifications")
-      .then(response => {
-        if(response.status === 200) {
-          return response.json()
-        } else {
-          throw new Error("Couldn't fetch data")
-        }
-      })
+      .then(response => response.json())
       .then(res => {
         addNotifications(res.notifications);
-        setNotifications(userNotifications);
       })
       .catch(error => {
-        setNotifications(userNotifications);
         setErrorMessage(error.message === 'Failed to fetch' && 'Failed to retrieve data from server. Please try again.');
       });
   }, []);
 
-  const mappedNotifications = notifications.map(notification => {
+  const mappedNotifications = userNotifications.map(notification => {
 
     return(
     <div 
@@ -56,12 +48,12 @@ function App() {
         <h1>BookFace</h1>
         <button onClick={handleButtonPress}>
           Notifications
-          {notifications[0] && <div className="notification-icon">!</div>}
+          {userNotifications && <div className="notification-icon">!</div>}
         </button>
       </nav>
       <main>
         <div className={`notification-container ${isNotificationMenuOpen ? "open-menu" : "hidden-menu"}`}>
-          {notifications[0] ? mappedNotifications : "No new notifications"}
+          {userNotifications ? mappedNotifications : "No new notifications"}
         </div>
         {errorMessage}
         <p>Your news feed goes here</p>
